@@ -118,7 +118,7 @@ function PortraitCard() {
       {/* Photo — upper-body crop via object-position */}
       <div className="relative overflow-hidden" style={{ aspectRatio: '3/4', maxHeight: '420px' }}>
         <img
-          src="/assets/vijaygovind-biju.jpg"
+          src={`${import.meta.env.BASE_URL}assets/vijaygovind-biju.jpg`}
           alt="Portrait of Vijaygovind Biju"
           className="w-full h-full"
           style={{
