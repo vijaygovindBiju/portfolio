@@ -16,19 +16,28 @@ export default function Footer() {
           >
             ~/portfolio
           </span>
-          <span
-            className="text-xs"
-            style={{ color: 'var(--text-muted)' }}
-          >
-            Built with React · TypeScript · Vite · Tailwind · Framer Motion
-          </span>
+          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-3">
+            <span
+              className="text-xs font-medium"
+              style={{ color: 'var(--text-secondary)' }}
+            >
+              Vijaygovind Biju
+            </span>
+            <span className="hidden sm:inline text-xs" style={{ color: 'var(--text-muted)' }}>·</span>
+            <span
+              className="text-xs"
+              style={{ color: 'var(--text-muted)' }}
+            >
+              Software Engineer · AI Engineer
+            </span>
+          </div>
         </div>
 
         <div className="flex items-center gap-1">
           {[
-            { icon: Github, label: 'GitHub',   href: 'https://github.com/yourusername' },
-            { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/yourprofile' },
-            { icon: Mail,   label: 'Email',    href: 'mailto:your@email.com' },
+            { icon: Github,   label: 'GitHub',   href: 'https://github.com/vijaygovindBiju' },
+            { icon: Linkedin, label: 'LinkedIn',  href: 'https://www.linkedin.com/in/vijaygovind-biju-273b17347' },
+            { icon: Mail,     label: 'Email',     href: 'mailto:vijaygovindbiju@gmail.com' },
           ].map(({ icon: Icon, label, href }) => (
             <a
               key={label}
@@ -52,9 +61,10 @@ export default function Footer() {
           ))}
         </div>
       </div>
+
       <div className="section-container pb-5 text-center">
         <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
-          &copy; {year} — Your Name
+          &copy; {year} — Vijaygovind Biju
         </p>
       </div>
     </footer>

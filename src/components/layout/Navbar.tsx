@@ -12,6 +12,8 @@ const NAV_LINKS = [
   { label: 'Contact',     href: '/#contact' },
 ]
 
+const GITHUB_URL = 'https://github.com/vijaygovindBiju'
+
 export default function Navbar() {
   const { theme, toggle } = useTheme()
   const [scrolled, setScrolled] = useState(false)
@@ -76,7 +78,7 @@ export default function Navbar() {
               className="text-sm font-semibold tracking-tight"
               style={{ color: 'var(--text-primary)' }}
             >
-              Your Name
+              Vijaygovind Biju
             </span>
           </Link>
 
@@ -116,7 +118,7 @@ export default function Navbar() {
 
             {/* GitHub CTA */}
             <a
-              href="https://github.com/yourusername"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex btn-secondary text-sm py-1.5 px-3"
@@ -174,7 +176,7 @@ export default function Navbar() {
                 style={{ borderTop: '1px solid var(--bg-border)' }}
               >
                 <a
-                  href="https://github.com/yourusername"
+                  href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block px-3 py-2.5 text-sm rounded-md transition-colors"

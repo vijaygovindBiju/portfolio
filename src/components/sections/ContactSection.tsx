@@ -38,8 +38,7 @@ export default function ContactSection() {
             className="text-lg leading-relaxed"
             style={{ color: 'var(--text-secondary)' }}
           >
-            I'm always up for conversations about software architecture, systems programming,
-            or what it actually takes to build AI-powered applications properly.
+            I'm interested in building, learning, and solving challenging engineering problems.
           </p>
         </motion.div>
 

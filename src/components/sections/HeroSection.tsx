@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Github } from 'lucide-react'
 
-// ─── Architecture Stack Diagram ───────────────────────────────────────────────
-// Represents: USER → INTERFACE → APPLICATION → DATA/LOGIC → SYSTEM/SERVER
+const GITHUB_URL = 'https://github.com/vijaygovindBiju'
 
+// ─── Architecture Stack Diagram ───────────────────────────────────────────────
 const STACK_LAYERS = [
-  { label: 'USER',              sub: 'input / interaction',   accent: false },
-  { label: 'INTERFACE',         sub: 'UI · widgets · state',  accent: false },
-  { label: 'APPLICATION',       sub: 'logic · services · API',accent: true  },
-  { label: 'DATA / LOGIC',      sub: 'models · pipelines',    accent: false },
-  { label: 'SYSTEM / SERVER',   sub: 'OS · kernel · drivers', accent: false },
+  { label: 'USER',            sub: 'input / interaction',    accent: false },
+  { label: 'INTERFACE',       sub: 'UI · widgets · state',   accent: false },
+  { label: 'APPLICATION',     sub: 'logic · services · API', accent: true  },
+  { label: 'DATA / LOGIC',    sub: 'models · pipelines',     accent: false },
+  { label: 'SYSTEM / SERVER', sub: 'OS · kernel · drivers',  accent: false },
 ]
 
 function ArchDiagram() {
@@ -27,13 +27,10 @@ function ArchDiagram() {
             transition={{ duration: 0.5, delay: 0.4 + delay, ease: 'easeOut' }}
             className="flex flex-col items-center w-full"
           >
-            {/* Layer box */}
             <div
               className="w-full rounded-lg px-5 py-3 flex items-center justify-between transition-all duration-300"
               style={{
-                backgroundColor: isAccent
-                  ? 'rgba(34, 211, 238, 0.08)'
-                  : 'var(--bg-card)',
+                backgroundColor: isAccent ? 'rgba(34, 211, 238, 0.08)' : 'var(--bg-card)',
                 border: `1px solid ${isAccent ? 'rgba(34, 211, 238, 0.3)' : 'var(--bg-border)'}`,
               }}
             >
@@ -60,7 +57,6 @@ function ArchDiagram() {
               />
             </div>
 
-            {/* Connector arrow */}
             {i < STACK_LAYERS.length - 1 && (
               <motion.div
                 className="flex flex-col items-center my-0.5"
@@ -68,10 +64,7 @@ function ArchDiagram() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.6 + delay }}
               >
-                <div
-                  className="w-px h-4"
-                  style={{ backgroundColor: 'var(--bg-border)' }}
-                />
+                <div className="w-px h-4" style={{ backgroundColor: 'var(--bg-border)' }} />
                 <motion.div
                   animate={{ y: [0, 2, 0] }}
                   transition={{ repeat: Infinity, duration: 2, delay: i * 0.3, ease: 'easeInOut' }}
@@ -79,22 +72,94 @@ function ArchDiagram() {
                 >
                   ↓
                 </motion.div>
-                <div
-                  className="w-px h-2"
-                  style={{ backgroundColor: 'var(--bg-border)' }}
-                />
+                <div className="w-px h-2" style={{ backgroundColor: 'var(--bg-border)' }} />
               </motion.div>
             )}
           </motion.div>
         )
       })}
 
-      {/* Decorative label */}
       <div
         className="mt-4 font-mono text-[10px] tracking-widest uppercase"
         style={{ color: 'var(--text-muted)', opacity: 0.6 }}
       >
         software architecture
+      </div>
+    </div>
+  )
+}
+
+// ─── Portrait Card ─────────────────────────────────────────────────────────────
+function PortraitCard() {
+  return (
+    <div
+      className="rounded-2xl border overflow-hidden relative"
+      style={{
+        backgroundColor: 'var(--bg-card)',
+        borderColor: 'var(--bg-border)',
+      }}
+    >
+      {/* Terminal header bar */}
+      <div
+        className="flex items-center gap-1.5 px-4 py-3 border-b"
+        style={{ borderColor: 'var(--bg-border)', backgroundColor: 'var(--bg-elevated)' }}
+      >
+        <div className="w-2.5 h-2.5 rounded-full bg-red-500 opacity-80" />
+        <div className="w-2.5 h-2.5 rounded-full bg-amber-400 opacity-80" />
+        <div className="w-2.5 h-2.5 rounded-full bg-green-500 opacity-80" />
+        <span
+          className="ml-3 font-mono text-xs"
+          style={{ color: 'var(--text-muted)' }}
+        >
+          vijaygovind-biju
+        </span>
+      </div>
+
+      {/* Photo — upper-body crop via object-position */}
+      <div className="relative overflow-hidden" style={{ aspectRatio: '3/4', maxHeight: '420px' }}>
+        <img
+          src="/assets/vijaygovind-biju.jpg"
+          alt="Portrait of Vijaygovind Biju"
+          className="w-full h-full"
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center top',
+            // Subtle darkening overlay handled by the ::after div below
+          }}
+        />
+        {/* Gradient fade at bottom to blend into card bg */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-24 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to top, var(--bg-card) 0%, transparent 100%)',
+          }}
+          aria-hidden="true"
+        />
+        {/* Very subtle vignette on background edges to suppress busy BG */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            boxShadow: 'inset 0 0 60px 20px var(--bg-card)',
+            opacity: 0.4,
+          }}
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Name / role caption at bottom */}
+      <div className="px-5 pb-5 pt-1">
+        <p
+          className="text-sm font-semibold"
+          style={{ color: 'var(--text-primary)' }}
+        >
+          Vijaygovind Biju
+        </p>
+        <p
+          className="font-mono text-xs mt-0.5"
+          style={{ color: 'var(--accent)' }}
+        >
+          Software Engineer · AI Engineer
+        </p>
       </div>
     </div>
   )
@@ -112,13 +177,10 @@ export default function HeroSection() {
       aria-label="Introduction"
       style={{ backgroundColor: 'var(--bg-primary)' }}
     >
-      {/* Grid background — subtle engineering texture */}
-      <div
-        className="absolute inset-0 grid-bg opacity-60"
-        aria-hidden="true"
-      />
+      {/* Grid background */}
+      <div className="absolute inset-0 grid-bg opacity-60" aria-hidden="true" />
 
-      {/* Radial highlight at top */}
+      {/* Radial highlight */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -129,7 +191,7 @@ export default function HeroSection() {
       />
 
       <div className="section-container relative z-10 pt-32 pb-20">
-        <div className="grid lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px] gap-14 xl:gap-20 items-center">
+        <div className="grid lg:grid-cols-[1fr_340px] xl:grid-cols-[1fr_380px] gap-12 xl:gap-16 items-center">
 
           {/* ── Left: text ── */}
           <div>
@@ -139,10 +201,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               className="inline-flex items-center gap-2.5 mb-6 px-3 py-1.5 rounded-full border"
-              style={{
-                backgroundColor: 'var(--bg-card)',
-                borderColor: 'var(--bg-border)',
-              }}
+              style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--bg-border)' }}
             >
               <span
                 className="w-1.5 h-1.5 rounded-full"
@@ -152,7 +211,7 @@ export default function HeroSection() {
                 className="font-mono text-xs tracking-wide"
                 style={{ color: 'var(--text-secondary)' }}
               >
-                Software Engineer · AI Engineer in Progress
+                SOFTWARE ENGINEER · AI ENGINEER
               </span>
             </motion.div>
 
@@ -176,8 +235,8 @@ export default function HeroSection() {
               className="text-lg leading-relaxed mb-8 max-w-[560px]"
               style={{ color: 'var(--text-secondary)' }}
             >
-              Software Engineer focused on systems programming, Linux, Flutter, and AI.
-              I care about what happens underneath the interface.
+              Software Engineer focused on systems, Linux, AI, and Flutter.
+              I learn by building software and understanding what happens underneath the abstractions.
             </motion.p>
 
             {/* Area tags */}
@@ -209,7 +268,7 @@ export default function HeroSection() {
                 <ArrowRight size={15} />
               </button>
               <a
-                href="https://github.com/yourusername"
+                href={GITHUB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"
@@ -220,33 +279,32 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* ── Right: architecture diagram ── */}
+          {/* ── Right: portrait + arch diagram stacked ── */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
-            className="hidden lg:block"
+            className="hidden lg:flex flex-col gap-4"
           >
+            {/* Real photo portrait */}
+            <PortraitCard />
+
+            {/* Compact arch diagram below the portrait */}
             <div
-              className="rounded-2xl p-6 border"
-              style={{
-                backgroundColor: 'var(--bg-card)',
-                borderColor: 'var(--bg-border)',
-              }}
+              className="rounded-xl p-4 border"
+              style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--bg-border)' }}
             >
-              {/* Terminal-style header bar */}
-              <div className="flex items-center gap-1.5 mb-5 pb-4 border-b" style={{ borderColor: 'var(--bg-border)' }}>
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500 opacity-80" />
-                <div className="w-2.5 h-2.5 rounded-full bg-amber-400 opacity-80" />
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500 opacity-80" />
-                <span
-                  className="ml-3 font-mono text-xs"
-                  style={{ color: 'var(--text-muted)' }}
-                >
+              <div
+                className="flex items-center gap-1.5 mb-3 pb-3 border-b"
+                style={{ borderColor: 'var(--bg-border)' }}
+              >
+                <div className="w-2 h-2 rounded-full bg-red-500 opacity-70" />
+                <div className="w-2 h-2 rounded-full bg-amber-400 opacity-70" />
+                <div className="w-2 h-2 rounded-full bg-green-500 opacity-70" />
+                <span className="ml-2 font-mono text-[10px]" style={{ color: 'var(--text-muted)' }}>
                   architecture.diagram
                 </span>
               </div>
-
               <ArchDiagram />
             </div>
           </motion.div>

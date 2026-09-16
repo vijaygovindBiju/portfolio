@@ -260,7 +260,7 @@ export const contacts = [
   {
     icon: 'linkedin',
     label: 'LinkedIn',
-    handle: 'Vijay Govind Biju',
+    handle: 'Vijaygovind Biju',
     href: 'https://www.linkedin.com/in/vijaygovind-biju-273b17347',
     description: 'Professional profile',
   },

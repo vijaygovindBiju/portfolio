@@ -26,9 +26,9 @@ export default function AboutSection() {
               className="text-3xl sm:text-4xl font-bold mb-6 leading-tight"
               style={{ color: 'var(--text-primary)' }}
             >
-              I don't just use abstractions.
+              Vijaygovind Biju
               <br />
-              <span className="text-gradient-cyan">I understand what's underneath.</span>
+              <span className="text-gradient-cyan">Building toward Software & AI Engineering.</span>
             </h2>
 
             <div
@@ -36,26 +36,22 @@ export default function AboutSection() {
               style={{ color: 'var(--text-secondary)' }}
             >
               <p>
-                I'm a developer focused on software engineering, systems programming, and AI.
-                My approach: understand the system, not just the API.
+                I learn by building software and understanding how the systems underneath it work.
+                My current focus is software engineering, Linux systems, Rust, Flutter, and AI engineering.
               </p>
               <p>
-                I run Linux as my daily driver and regularly work at the interface between software and the OS —
-                D-Bus protocols, PTY mechanics, audio graphs, kernel calls. Understanding the substrate produces
-                better software at every layer above it.
+                I enjoy taking projects from architecture and implementation through debugging and iteration.
+                I care about understanding what happens beneath the abstractions — D-Bus, PTYs, audio graphs,
+                kernel interfaces — because that understanding makes better software at every layer above.
               </p>
               <p>
-                I build Flutter applications with deliberate architecture. I write Rust to be forced to think
-                about ownership, lifetimes, and resource management. I study Python and machine learning to
-                understand what AI engineering actually requires.
+                I write Rust to think carefully about ownership and resource management. I build Flutter
+                applications with deliberate architecture. I study machine learning to understand what
+                AI engineering actually requires in practice.
               </p>
               <p>
-                I use AI coding agents as development tools — they accelerate boilerplate and implementation.
-                System design and engineering judgment remain mine.
-              </p>
-              <p>
-                Right now I'm building toward AI Engineering: combining software engineering discipline with
-                machine learning systems, data pipelines, and production-quality AI application design.
+                I use AI coding agents as development tools — for boilerplate, refactoring, and
+                implementation. Architecture and engineering decisions remain mine.
               </p>
             </div>
           </motion.div>
@@ -113,9 +109,10 @@ export default function AboutSection() {
                 Direction
               </p>
               <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                Moving toward <strong style={{ color: 'var(--text-primary)' }}>Software Engineering</strong> and{' '}
-                <strong style={{ color: 'var(--text-primary)' }}>AI Engineering</strong> — combining systems
-                thinking with machine learning and production software design.
+                Building toward{' '}
+                <strong style={{ color: 'var(--text-primary)' }}>Software Engineering</strong> and{' '}
+                <strong style={{ color: 'var(--text-primary)' }}>AI Engineering</strong> — combining
+                systems thinking with machine learning and production software design.
               </p>
             </div>
           </motion.div>
